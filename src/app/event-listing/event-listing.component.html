@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="page-title">
+            <span class="fw-semi-bold" >Event Listing</span>
+        </h1>
+        <div class="row" style="padding-top: 1%;margin-left: 3%;">
+            <div class="col-sm-8" style="margin-left: 4%;margin-top: 1%;">
+                
+                <label>City</label>
+                <select  class="custom-select" [(ngModel)]="selectedCity" (change)="onChangeCity($event)">
+                    <option  *ngFor="let ele of cityList" value="{{ele.city}}"> {{ele.city}} </option>
+                </select>
+
+
+                <label>Month</label>
+                <select class="custom-select" >
+                    <option *ngFor="let ele of monthList">{{ele}}</option>
+                </select>
+            </div>
+           
+        </div>
+        <div class="col-sm-8" style="padding: 5%;">
+            <mat-grid-list cols="2" rowHeight="300px" >
+                <mat-grid-tile  *ngFor="let item of eventList"
+                  [style.background-image]="'url(' + (item.image) + ')'">
+                
+                 <mat-grid-tile-header>
+                    <h3 class='date-format'>{{((item.date).split('.'))[0]}}</h3>
+                
+                    <button mat-icon-button color="primary" aria-label="Example icon" style="margin-left: 90%;">
+                        <mat-icon>bookmark_border</mat-icon>
+                      </button>
+                </mat-grid-tile-header>
+               
+               
+                <mat-grid-tile-footer>
+                    <h1 style="font-size: large;font-weight: 200;"><b>{{item.name}}</b></h1>
+                </mat-grid-tile-footer>
+                </mat-grid-tile>
+              </mat-grid-list> 
+        </div>
+       
+    </div>
+
+</div>
+
+
+
+

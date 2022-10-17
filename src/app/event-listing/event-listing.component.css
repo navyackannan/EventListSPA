@@ -1,0 +1,34 @@
+.main-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-title{
+    padding-top: 4%;
+    font-size:x-large;
+    margin-left: 5%;
+    font-weight:bolder;
+}
+
+.date-format{
+    border: 5px solid white;
+    border-width: thin;
+    padding:5%;
+    width: 4%;
+    font-size: medium;
+    text-align: center;
+}
+
+.custom-select{
+    
+    font-family: Arial;
+    border: 6px thin black;
+    width: 10%;
+    height: 10%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+ 
+}
+ 
+  
