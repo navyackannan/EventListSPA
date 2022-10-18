@@ -23,28 +23,28 @@ export class EventListingComponent implements OnInit {
   cityList:any;
   
   monthList = ['January','Feb','March','April','May','June','July','Aug','Sep','Oct','Nov','Dec']
-
-  constructor(private evevtService:EventListService) { }
+  constructor(private evevtService:EventListService,private httpClient:HttpClientModule) { }
 
   ngOnInit(): void {
      
     this.evevtService.getEvents().subscribe(res=>{
       this.eventList = res ;
+
       this.cityList = this.eventList.filter((el:{ city:any}, index:any, array:any[]) =>
         index === array.findIndex((findTest) =>
           findTest.city === el.city
       ));
-     
      })
   }
 
   onChangeCity(event:any) {
     this.eventList = this.eventList.filter((item:any) => {
-      if(item.city == this.selectedCity){
-        return item;
+      if(item.id == this.selectedCity){
+        return item
+
       }
-     
-    }) 
+      
+    })
   }
  
 }
