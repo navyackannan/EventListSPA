@@ -8,7 +8,7 @@
                 
                 <label>City</label>
                 <select  class="custom-select" [(ngModel)]="selectedCity" (change)="onChangeCity($event)">
-                    <option  *ngFor="let ele of cityList" value="{{ele.city}}"> {{ele.city}} </option>
+                    <option  *ngFor="let ele of cityList" value="{{ele.id}}"> {{ele.city}} </option>
                 </select>
 
 
